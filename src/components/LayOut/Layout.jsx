@@ -5,7 +5,7 @@ import Router from "../Routers/Router"
 const Layout = () => {
   return (
     <div>
-        <Header/>
+        <Header />
         <div>
             <Router/>
         </div>

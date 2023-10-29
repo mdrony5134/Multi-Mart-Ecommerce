@@ -5,6 +5,7 @@ import { BsBag } from "react-icons/bs";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -12,8 +13,8 @@ const Header = () => {
 
   return (
     <div>
-      <header className="py-4   shadow-md bg-slate-200 font-roboto">
-        <div className="container mx-auto flex justify-around items-center">
+      <header className="py-4  shadow-md bg-slate-200 font-roboto">
+        <div className="container  mx-auto flex justify-between items-center">
           <NavLink to={"/"} className="text-3xl font-bold">
             <span className="text-primary">Multi</span>Mart
           </NavLink>

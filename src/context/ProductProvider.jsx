@@ -18,13 +18,14 @@ const ProductProvider = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const getAllProducts = async(url) =>{
+    dispatch({type:"SET_LOADING"})
   try {
       const res = await axios.get(url)
       const products = await res.data;
-      dispatch({type:"Set_Api_Data", payload:products})
+      dispatch({type:"SET_API_DATA", payload:products})
       // console.log(products)
   } catch (error) {
-    dispatch({})
+    dispatch({type:"API_ERROR"})
   }
   
   }
@@ -34,7 +35,7 @@ const ProductProvider = ({children}) => {
   },[])
 
   return (
-     <ProductContext.Provider value={{}}>{children}</ProductContext.Provider>
+     <ProductContext.Provider value={{...state}}>{children}</ProductContext.Provider>
   )
 }
 

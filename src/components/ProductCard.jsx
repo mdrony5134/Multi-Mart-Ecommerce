@@ -1,13 +1,14 @@
 import { AiOutlineHeart } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import FormatNumber from "./Helper/FormatNumber";
 
 const ProductCard = ({product}) => {
-    const {image, name, category, price} = product;
+    const {id, image, name, category, price} = product;
     const navigate = useNavigate()
   return (
     <div>
           <div className="bg-white shadow rounded overflow-hidden ">
-            <div className="relative group "  onClick={()=>navigate(`/product/${category}`)}>
+            <div className="relative group "  onClick={()=>navigate(`/product/${id}`)}>
             
              <img src={image} className="w-full" alt="" />
              
@@ -22,7 +23,7 @@ const ProductCard = ({product}) => {
             </div>
             
             <div className="flex justify-between py-4 px-5">
-              <Link to={`/product/${category}`}>
+              <Link to={`/product/${id}`}>
                 <h4 className="uppercase text-lg font-medium hover:text-primary">
                   {name}
                 </h4>
@@ -30,7 +31,7 @@ const ProductCard = ({product}) => {
               <p className="">{category}</p>
             </div>
             <p className="px-5 mb-3 text-xl text-primary font-semibold font-roboto">
-              ${price}
+              <FormatNumber price={price}/>
             </p>
             <button className="w-full py-1 bg-primary text-white rounded-b text-lg hover:bg-transparent hover:text-primary transition uppercase font-popins">
               Add to cart

@@ -8,6 +8,8 @@ const initialState ={
   isError: false,
   products: [],
   featureProduct: [],
+  isSingleLoading: false,
+  singleProduct:{}
 }
 const API = "https://api.pujakaitem.com/api/products"
 
@@ -29,13 +31,26 @@ const ProductProvider = ({children}) => {
   }
   
   }
+
+  // single product function
+
+  const getSingleProduct=async(url)=>{
+    dispatch({type:"SET_SINGLE_LOADING"})
+    try {
+      const res = await axios.get(url)
+      const product = await res.data
+      dispatch({type:"SET_SINGLE_API_DATA", payload:product})
+    } catch (error) {
+      dispatch({type:"API_ERROR"})
+    }
+  }
   
   useEffect(()=>{
     getAllProducts(API)
   },[])
 
   return (
-     <ProductContext.Provider value={{...state}}>{children}</ProductContext.Provider>
+     <ProductContext.Provider value={{...state, getSingleProduct}}>{children}</ProductContext.Provider>
   )
 }
 

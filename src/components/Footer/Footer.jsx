@@ -13,8 +13,8 @@ const Footer = () => {
       <footer className="bg-white py-16 md:py-12">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div className="space-y-8">
-            <NavLink to={"/"} className="text-3xl font-bold text-primary">
-              MultiMart
+            <NavLink to={"/"} className="text-3xl font-bold">
+               <span className="text-primary">Multi</span>Mart
             </NavLink>
             <p className="text-gray-500">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,

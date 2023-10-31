@@ -7,6 +7,7 @@ import Login from './../../pages/Login';
 import Singup from './../../pages/Singup';
 import SingleProduct from "../../pages/SingleProduct";
 import Cart from "../../pages/Cart";
+import ErrorPage from './../../pages/ErrorPage';
 
 
 const Router = () => {
@@ -22,6 +23,7 @@ const Router = () => {
             <Route path="contact" element={<Contact/>}/>
             <Route path="singup" element={<Singup/>}/>
             <Route path="login" element={<Login/>}/>
+            <Route path="*" element={<ErrorPage/>}/>
         </Routes>
         
     </div>

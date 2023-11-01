@@ -27,16 +27,14 @@ const AddToCart = ({ product }) => {
               <button
                 className={`w-4 h-4 align-middle border-none rounded-full outline-none ml-3 ${
                   color === currColor
-                    ? "bg-black active:opacity-100"
+                    ? "bg-black opacity-100"
                     : "opacity-50"
                 }`}
                 style={{ backgroundColor: currColor }}
                 key={index}
                 onClick={() => setColor(currColor)}
               >
-                {color === currColor ? (
-                  <FaCheck className="text-gray-200 text-sm" />
-                ) : null}
+                {color === currColor ? <FaCheck className="text-gray-200 text-sm" /> : null}
               </button>
             );
           })}

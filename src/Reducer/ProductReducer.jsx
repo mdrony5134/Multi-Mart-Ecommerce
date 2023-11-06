@@ -15,6 +15,7 @@ const ProductReducer = (state, action) => {
               ...state,
               isLoading:false,
               products:action.payload,
+              
               featureProduct: featureData,
             }
 

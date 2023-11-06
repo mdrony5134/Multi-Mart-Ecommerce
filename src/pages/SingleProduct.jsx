@@ -15,7 +15,7 @@ const SingleProduct = () => {
     useProductContext();
 
   const {
-    id: aliace,
+    id: sp,
     name,
     company,
     price,
@@ -29,11 +29,11 @@ const SingleProduct = () => {
 
   const { id } = useParams();
 
- 
+ console.log(singleProduct)
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-  }, []);
+  }, [id]);
   return (
     <div>
       <PageNavigation name={name} />

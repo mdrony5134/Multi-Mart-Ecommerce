@@ -24,7 +24,12 @@ const ProductProvider = ({children}) => {
   try {
       const res = await axios.get(url)
       const products = await res.data;
-      dispatch({type:"SET_API_DATA", payload:products})
+      console.log(products)
+      let sortValue = products.sort((a, b)=> b.price - a.price)
+      console.log(sortValue);
+
+      dispatch({type:"SET_API_DATA", payload:sortValue})
+       
       // console.log(products)
   } catch (error) {
     dispatch({type:"API_ERROR"})
